@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>Iniciar Sesión</h2>
+
+    <!-- IMPORTANTE: th:object="${userDTO}" -->
+    <form th:action="@{/login}" th:object="${userDTO}" method="post">
+
+        <label for="username">Usuario:</label>
+        <!-- th:field="*{username}" se mapea a userDTO.getUsername() -->
+        <input type="text" id="username" th:field="*{username}"/>
+
+        <br/>
+
+        <label for="password">Contraseña:</label>
+        <!-- th:field="*{password}" se mapea a userDTO.getPassword() -->
+        <input type="password" id="password" th:field="*{password}"/>
+
+        <br/>
+        <button type="submit">Ingresar</button>
+    </form>
+
+    <div th:if="${error}">
+        <p style="color:red" th:text="${error}"></p>
+    </div>
+
+</body>
+</html>
