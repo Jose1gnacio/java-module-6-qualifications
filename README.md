@@ -34,3 +34,50 @@ Este proyecto es una **mini app** construida con **Spring Boot** (versión 3.x, 
 1. **Clona** el repositorio o descárgalo en tu máquina local:
    ```bash
    git clone https://github.com/Jose1gnacio/java-module-6-qualifications.git
+
+   
+2. Abre la carpeta en tu IDE favorito o desde la línea de comandos.
+ 
+3. **Compila e instala dependencias con Maven**.
+
+4. **Ejecuta la aplicación**
+Por defecto, arrancará en http://localhost:8080.
+
+## Cómo probar
+
+1. **Navegar a la app**
+URL de Login: http://localhost:8080/login.
+
+2. **Usa credenciales admin / admin.**
+Después de loguearte con éxito, te redirigirá a /home, donde verás la lista de alumnos.
+
+3. **Endpoints REST (Insomnia / Postman)**
+Todos están mapeados en /api/....
+
+```bash
+   
+GET http://localhost:8080/api/alumnos
+POST Alumnos (crear):
+bash
+Copiar código
+POST http://localhost:8080/api/alumnos
+Content-Type: application/json
+
+{
+  "rut": "11111111-1",
+  "nombre": "Juan Pérez",
+  "direccion": "Av. Siempre Viva 123"
+}
+POST Materias:
+bash
+Copiar código
+POST http://localhost:8080/api/materias
+Content-Type: application/json
+
+{
+  "nombre": "Matemáticas",
+  "alumno": {
+    "id": 1
+  }
+}
+
